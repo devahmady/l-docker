@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  php-apache:
+    container_name: php-apache
+    build:
+      context: ./php
+    ports:
+        - '8080:80'
+    volumes:
+      - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
+   
+
+  react-js:
+    container_name: react-js
+    build:
+      context: ./react
+    ports:
+      - "4000:3000"
+    
+  
+  
+  
+  
